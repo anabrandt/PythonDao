@@ -1,21 +1,19 @@
 
 import oracledb
 
-conn = oracledb . connect ( 
+con = oracledb . connect ( 
     user ='rm552283', 
     password ='170204', 
     dsn ='oracle.fiap.com.br/orcl ')
 
-print("Versao do banco", conn.version)
+print("Versao do banco", con.version)
 
-cur = conn.cursor()
+cur = con.cursor()
 cur.execute("select * from empregad")
 
-cur = conn . cursor () # Criar um cursor
+cur = con . cursor () # Criar um cursor
 cur . execute ('SELECT * FROM EMPREGADO ')
 
-rows = cur . fetchall ()
-for reg in rows : print ( reg )
 
 cur . close ()
-conn . close ()
+con . close ()
